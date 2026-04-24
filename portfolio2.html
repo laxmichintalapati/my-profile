@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lakshmi - Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* navbar */
+    .navbar {
+      background-color: #1a3c5e;
+    }
+
+    /* hero section */
+    .hero-section {
+      background-color: #1a3c5e;
+      color: white;
+      padding: 80px 0 60px 0;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+
+    .hero-section p {
+      font-size: 1.1rem;
+      color: #cce0f5;
+    }
+
+    .hero-section .btn {
+      margin: 5px;
+    }
+
+    /* circular photo */
+    .profile-pic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  
+  background-image: url('./my.jpg');  /* 👈 your image file */
+  background-size: cover;
+  background-position: center;
+  
+  margin: 0 auto 20px auto;
+}
+      /* To use your own photo later, replace the line above with:
+         background-image: url('./my.jpg');
+         background-size: cover;
+         background-position: center;
+         and remove the font-size, font-weight, color lines */
+    }
+
+    /* section headings */
+    .section-heading {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a3c5e;
+      margin-bottom: 8px;
+    }
+
+    .underline {
+      width: 50px;
+      height: 3px;
+      background-color: #e06b3a;
+      margin-bottom: 30px;
+    }
+
+    /* about */
+    #about {
+      background-color: #ffffff;
+      padding: 60px 0;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .info-item i {
+      color: #1a3c5e;
+      font-size: 1.1rem;
+    }
+
+    /* skills */
+    #skills {
+      background-color: #f0f4f8;
+      padding: 60px 0;
+    }
+
+    .skill-box {
+      background: white;
+      border: 1px solid #dde3ea;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .skill-box h5 {
+      color: #1a3c5e;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    /* projects */
+    #projects {
+      background-color: #ffffff;
+      padding: 60px 0;
+    }
+
+    .project-card {
+      border: 1px solid #dde3ea;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .project-card .card-header {
+      background-color: #1a3c5e;
+      color: white;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 14px 18px;
+    }
+
+    .project-card .card-body {
+      padding: 18px;
+    }
+
+    .project-card .card-body p {
+      font-size: 0.93rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* achievements */
+    #achievements {
+      background-color: #f0f4f8;
+      padding: 60px 0;
+    }
+
+    .achievement-box {
+      background: white;
+      border-left: 4px solid #e06b3a;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+
+    .achievement-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .achievement-box .title {
+      font-weight: 700;
+      color: #1a3c5e;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    /* education */
+    #education {
+      background-color: #ffffff;
+      padding: 60px 0;
+    }
+
+    .edu-box {
+      background: #f0f4f8;
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+
+    .edu-box h4 {
+      color: #1a3c5e;
+      font-weight: 700;
+    }
+
+    .edu-box .college {
+      color: #e06b3a;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin: 6px 0;
+    }
+
+    .cgpa-badge {
+      display: inline-block;
+      background-color: #1a3c5e;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    /* contact */
+    #contact {
+      background-color: #1a3c5e;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    #contact .section-heading {
+      color: white;
+    }
+
+    #contact .underline {
+      margin: 0 auto 30px auto;
+    }
+
+    #contact a {
+      color: #cce0f5;
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .contact-item {
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .contact-item i {
+      margin-right: 8px;
+      color: #7ecfbd;
+    }
+
+.custom-btn {
+  background-color: #1a3c5e;   /* navbar color */
+  color: white;
+  border: 2px solid #1a3c5e;
+  border-radius: 25px;
+  padding: 10px 24px;
+  transition: 0.3s;
+}
+
+.custom-btn:hover {
+  background-color: #16324d;   /* slightly darker blue */
+  color: white;
+  border-color: #16324d;
+}
+
+    /* footer */
+    footer {
+      background-color: #122b44;
+      color: #aaa;
+      text-align: center;
+      padding: 18px;
+      font-size: 0.85rem;
+    }
+
+    /* custom dark blue badge (replaces red) */
+    .badge-darkblue {
+      background-color: #1a3c5e;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-section">
+  <div class="container">
+
+    <!-- Profile picture circle -->
+    <div class="profile-pic"></div>
+
+    <h1>Chintalapati Lakshmi</h1>
+    <p class="mt-2">Computer Science & Engineering Student | Problem Solver | Team Lead</p>
+    <p style="color:#9dc8e8; font-size:0.92rem;">Lendi Institute of Engineering and Technology, Jonnada</p>
+    <div class="mt-4">
+      <a href="#projects" class="btn btn-light fw-semibold">View My Projects</a>
+      <a href="#contact" class="btn btn-outline-light fw-semibold">Contact Me</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-heading">Career Objective</h2>
+    <div class="underline"></div>
+    <div class="row gy-4">
+      <div class="col-md-7">
+        <p class="about-text">
+          Hi! I'm Lakshmi, a 3rd-year B.Tech student in Computer Science and Engineering.
+          I have a strong interest in AI, Blockchain, and building technology that helps people.
+          I enjoy leading teams and taking on challenges — whether it's a hackathon or a college project.
+        </p>
+        <p class="about-text">
+          I believe in learning by doing. Most of what I know came from working on real projects,
+          participating in competitions, and collaborating with my teammates. I'm always looking
+          for new opportunities to grow and contribute.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <div class="info-item"><i class="bi bi-person-fill"></i> Chintalapati Lakshmi</div>
+        <div class="info-item"><i class="bi bi-geo-alt-fill"></i> Vizianagaram, Andhra Pradesh</div>
+        <div class="info-item"><i class="bi bi-telephone-fill"></i> +91 8978429469</div>
+        <div class="info-item"><i class="bi bi-envelope-fill"></i> laxmichintalapati.2006@gmail.com</div>
+        <div class="info-item"><i class="bi bi-mortarboard-fill"></i> B.Tech CSE — CGPA: 9.5</div>
+        <div class="info-item"><i class="bi bi-calendar3"></i> 2023 – 2027</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <h2 class="section-heading">Education</h2>
+    <div class="underline"></div>
+    <div class="edu-box">
+      <h4>B.Tech in Computer Science and Engineering</h4>
+      <p class="college">Lendi Institute of Engineering and Technology, Jonnada</p>
+      <p style="color:#666; font-size:0.9rem;"><i class="bi bi-calendar3 me-1"></i> 2023 – 2027</p>
+      <div class="cgpa-badge">CGPA : 9.5 / 10</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-heading">Skills</h2>
+    <div class="underline"></div>
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="skill-box">
+          <h5><i class="bi bi-code-slash me-2"></i>Programming Languages</h5>
+          <span class="badge bg-primary me-1 mb-1 p-2">C</span>
+          <span class="badge bg-primary me-1 mb-1 p-2">Python</span>
+          <span class="badge bg-primary me-1 mb-1 p-2">Core Java</span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="skill-box">
+          <h5><i class="bi bi-window me-2"></i>Frontend & Databases</h5>
+          <span class="badge bg-success me-1 mb-1 p-2">HTML</span>
+          <span class="badge bg-success me-1 mb-1 p-2">SQL</span>
+          <span class="badge bg-success me-1 mb-1 p-2">MongoDB</span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="skill-box">
+          <h5><i class="bi bi-tools me-2"></i>Tools & IDEs</h5>
+          <span class="badge bg-secondary me-1 mb-1 p-2">GitHub</span>
+          <span class="badge bg-secondary me-1 mb-1 p-2">VS Code</span>
+          <span class="badge bg-secondary me-1 mb-1 p-2">Firebase</span>
+          <span class="badge bg-secondary me-1 mb-1 p-2">Kivy</span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="skill-box">
+          <h5><i class="bi bi-people-fill me-2"></i>Soft Skills</h5>
+          <span class="badge bg-warning text-dark me-1 mb-1 p-2">Communication</span>
+          <span class="badge bg-warning text-dark me-1 mb-1 p-2">Teamwork</span>
+          <span class="badge bg-warning text-dark me-1 mb-1 p-2">Problem-Solving</span>
+          <span class="badge bg-warning text-dark me-1 mb-1 p-2">Time Management</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-heading">Projects</h2>
+    <div class="underline"></div>
+    <div class="row">
+
+      <div class="col-md-4 d-flex">
+        <div class="project-card">
+          <div class="card-header">QuickAid</div>
+          <div class="card-body">
+            <span class="badge badge-darkblue me-1 mb-2">Team Lead</span>
+            <span class="badge bg-success mb-2">In Progress</span>
+            <p>
+              An AI-powered chatbot that connects users to nearby emergency responders
+              using NLP, GPS, and Cloud APIs. Built to reduce response time and save lives.
+            </p>
+            <p><strong>🏆 1st Prize – NSRIT Ideation Competition</strong></p>
+            <div class="mt-2">
+              <span class="badge bg-light text-dark border">NLP</span>
+              <span class="badge bg-light text-dark border">GPS APIs</span>
+              <span class="badge bg-light text-dark border">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 d-flex">
+        <div class="project-card">
+          <div class="card-header">CertiCheck</div>
+          <div class="card-body">
+            <span class="badge badge-darkblue me-1 mb-2">Team Lead</span>
+            <span class="badge bg-success mb-2">SIH 2025</span>
+            <p>
+              A certificate verification system using AI and Blockchain to detect fake
+              certificates. Improves trust in academic and hiring processes.
+            </p>
+            <p><strong>🇮🇳 Selected – Smart India Hackathon 2025</strong></p>
+            <div class="mt-2">
+              <span class="badge bg-light text-dark border">Blockchain</span>
+              <span class="badge bg-light text-dark border">AI/ML</span>
+              <span class="badge bg-light text-dark border">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 d-flex">
+        <div class="project-card">
+          <div class="card-header">Animind</div>
+          <div class="card-body">
+            <span class="badge badge-darkblue me-1 mb-2">Team Member</span>
+            <span class="badge bg-success mb-2">DTI Project</span>
+            <p>
+              An interactive math learning platform for Grades 1–5 built with Python Kivy
+              and Firebase. Focused on making learning fun, especially for children with autism.
+            </p>
+            <div class="mt-2">
+              <span class="badge bg-light text-dark border">Python</span>
+              <span class="badge bg-light text-dark border">Kivy</span>
+              <span class="badge bg-light text-dark border">Firebase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <h2 class="section-heading">Achievements</h2>
+    <div class="underline"></div>
+
+    <div class="achievement-box">
+      <div class="title">🥇 1st Prize – NSRIT Ideation Competition</div>
+      <p>Won first place for QuickAid, an AI-powered hyperlocal emergency chatbot.</p>
+    </div>
+
+    <div class="achievement-box">
+      <div class="title">🇮🇳 Selected – Smart India Hackathon (SIH) 2025</div>
+      <p>Selected at the internal level for CertiCheck, an AI & Blockchain certificate verification system.</p>
+    </div>
+
+    <div class="achievement-box">
+      <div class="title">🥇 1st Prize – Startup Idea Competition (Engineers Day 2024)</div>
+      <p>Won for Rural Rush, a hyperlocal emergency delivery idea presented at the Engineers Day competition.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-heading">Contact Me</h2>
+    <div class="underline"></div>
+    <p style="color:#cce0f5; max-width:500px; margin:0 auto 30px auto; font-size:0.97rem;">
+      I'm open to internships, collaborations, and project opportunities.
+      Feel free to reach out!
+    </p>
+    <div class="contact-item">
+      <i class="bi bi-envelope-fill"></i>
+      <a href="mailto:laxmichintalapati.2006@gmail.com">laxmichintalapati.2006@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <i class="bi bi-telephone-fill"></i>
+      <a href="tel:+918978429469">+91 8978429469</a>
+    </div>
+    <div class="contact-item">
+      <i class="bi bi-geo-alt-fill"></i> Vizianagaram, Andhra Pradesh – 535006
+    </div>
+    <div class="mt-4">
+      <a href="mailto:laxmichintalapati.2006@gmail.com" class="btn custom-btn fw-semibold px-4">
+  <i class="bi bi-send me-2"></i>Send Email
+</a>    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2024 Chintalapati Lakshmi | Vizianagaram, Andhra Pradesh</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
